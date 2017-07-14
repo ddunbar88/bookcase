@@ -1,0 +1,12 @@
+ <div class="booyah-box col-10 offset-1">
+   <h1><%= @book.title %></h1>
+   <h3><%= @book.year %></h3>
+   <h3><%= @book.author %></h3>
+   <h3><%= @book.booktype %></h3>
+   <h3><%= @book.genre %></h3>
+   <h3><%= @book.classification %></h3>
+   <div class="float-right">
+    <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary' %>
+    <%= link_to 'Destroy', book_path(@book), method: :delete, data: {confirm: 'Are you sure you want to delete this book?'},class: 'btn btn-danger' %>
+  </div>
+ </div>
