@@ -1,11 +1,39 @@
-<% @books.each do |book| %>
- <div class="booyah-box col-10 offset-1">
-   <h1><%= link_to book.title, book_path(book) %></h1>
-   <h3><%= book.year %></h3>
-   <h3><%= book.author %></h3>
-   <h3><%= book.booktype %></h3>
-   <h3><%= book.genre %></h3>
-   <h3><%= book.classification %></h3>
- </div>
+<h1>Bookcase</h1>
 
- <% end %>
+<%= form_tag books_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<table>
+ <thread>
+  <tr>
+   <th>Title</th>
+   <th>Year</th>
+   <th>Author</th>
+   <th>Booktype</th>
+   <th>Genre</th>
+   <th>Classification</th>
+  </tr>
+ </thread>
+ 
+ <tbody>
+   <% @books.each do |book| %>
+    <tr>
+     <td><%= link_to book.title.titleize, book_path(book) %></td> 
+     <td><%= book.year %></td> 
+     <td><%= book.author.titleize %></td> 
+     <td><%= book.booktype.titleize %></td> 
+     <td><%= book.genre.titleize %></td> 
+     <td><%= book.classification.titleize %></td>
+     <td><%= link_to 'Show', book %></td>
+     <td><%= link_to 'Edit', edit_book_path(book) %></td>
+     <td><%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?' } %></td>
+   </tr>
+  <% end %>
+ </tbody>
+</table> 
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>
