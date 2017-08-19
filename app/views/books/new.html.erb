@@ -3,8 +3,8 @@
     <%= f.input :title %>
     <%= f.input :year %>
     <%= f.input :author %>
-    <%  options_from_collection_for_select(Book.booktypes, "index", "booktype") %>
+    <%= f.select :booktype, Book.booktypes.sort, include_blank: true, prompt: 'Choose Book Type' %>
     <%= f.input :genre %>
-    <%  options_from_collection_for_select(Book.classifications, 'index', 'classification') %>
-    <%= f.submit 'Create', class: 'btn btn-primary' %>
+    <%= f.select :classification, Book.classifications.sort, include_blank: true, prompt: 'Choose Classification' %>
+    <%= f.submit 'Create Book', class: 'btn btn-primary' %>
   <% end %>

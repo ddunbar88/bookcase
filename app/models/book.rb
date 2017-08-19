@@ -12,38 +12,38 @@ class Book < ApplicationRecord
 
   def self.classifications
     [
-    "General Works - encyclopedias",
-    "Philosophy, Psychology, Religion",
-    "History - Auxiliary Sciences",
-    "History (except American)",
-    "General U.S. History",
-    "Local U.S. History",
-    "Geography, Anthropology, Recreation",
-    "Social Sciences U",
-    "Political Science V",
-    "Law Z - Bibliography and Library Science",
-    "Education",
-    "Music",
-    "Fine Arts",
-    "Language and Literature",
-    "Science",
-    "Medicine",
-    "Agriculture",
-    "Technology",
-    "Military",
-    "Naval Science",
-    "Bibliography and Library Science"
-    ].each_with_index.map { | classification, index | [ classification, index ] }
+      "General Works - encyclopedias",
+      "Philosophy, Psychology, Religion",
+      "History - Auxiliary Sciences",
+      "History (except American)",
+      "General U.S. History",
+      "Local U.S. History",
+      "Geography, Anthropology, Recreation",
+      "Social Sciences U",
+      "Political Science V",
+      "Law Z - Bibliography and Library Science",
+      "Education",
+      "Music",
+      "Fine Arts",
+      "Language and Literature",
+      "Science",
+      "Medicine",
+      "Agriculture",
+      "Technology",
+      "Military",
+      "Naval Science",
+      "Bibliography and Library Science"
+    ]
   end
 
   def self.booktypes
-  [
-  "Fiction",
-  "Nonfiction"
-  ].each_with_index.map { | booktype, index | [ booktype, index ] }
+    [
+      "Fiction",
+      "Nonfiction"
+    ]
   end
 
-  private 
+  private
 
   def downcase_content
     self.title = self.title.downcase
