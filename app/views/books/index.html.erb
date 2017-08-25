@@ -10,21 +10,19 @@
   <tr>
    <th>Title</th>
    <th>Year</th>
-   <th>Author</th>
    <th>Booktype</th>
    <th>Genre</th>
    <th>Classification</th>
   </tr>
  </thread>
- 
+
  <tbody>
    <% @books.each do |book| %>
     <tr>
-     <td><%= link_to book.title.titleize, book_path(book) %></td> 
-     <td><%= book.year %></td> 
-     <td><%= book.author.titleize %></td> 
-     <td><%= book.booktype.titleize %></td> 
-     <td><%= book.genre.titleize %></td> 
+     <td><%= link_to book.title.titleize, book_path(book) %></td>
+     <td><%= book.year %></td>
+     <td><%= book.booktype.titleize %></td>
+     <td><%= book.genre.titleize %></td>
      <td><%= book.classification.titleize %></td>
      <td><%= link_to 'Show', book %></td>
      <td><%= link_to 'Edit', edit_book_path(book) %></td>
@@ -32,7 +30,7 @@
    </tr>
   <% end %>
  </tbody>
-</table> 
+</table>
 
 <br>
 

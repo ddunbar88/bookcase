@@ -1,5 +1,7 @@
 class Book < ApplicationRecord
   before_save :downcase_content
+  has_many :authorships
+  has_many :authors, through: :authorships
 
   def self.search(search)
     if search
@@ -47,7 +49,6 @@ class Book < ApplicationRecord
 
   def downcase_content
     self.title = self.title.downcase
-    self.author = self.author.downcase
     self.genre = self.genre.downcase
     self.classification = self.classification.downcase
     self.booktype = self.booktype.downcase
