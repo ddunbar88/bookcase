@@ -2,6 +2,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.search(params[:search])
+    @books = Book.order("title").page(params[:page]).per(25)
   end
 
   def new
