@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  belongs_to :user
+
   before_save :downcase_content
   has_many :authorships
   has_many :authors, through: :authorships

@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @books = Book.search(params[:search])
@@ -10,7 +11,8 @@ class BooksController < ApplicationController
   end
 
   def create
-    Book.create(book_params)
+    # Book.create(book_params)
+    current_user.books.create(book_params)
     redirect_to root_path
   end
 

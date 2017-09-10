@@ -60,3 +60,4 @@ end
 gem 'simple_form'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'devise'
